@@ -1,0 +1,29 @@
+1.时间要精确到小时 分钟
+2.昨日修复参考点位名称查询
+2.添加按月查询的功能 并能导出excel
+3.修正按天查询的功能 目前查询的是当前时间到昨天当前时间这个一天的时间
+
+4.修复记录里面添加材料一栏 比如 会口更换球机 横龙石溪桥头 光分插片 
+5.点位里面添加电表位置信息 光交信息
+
+6.添加闪断点位分析 查询出近三天每天掉线点位 
+
+7.展示页面添加最近故障时间
+8.添加公安要求工单
+9.添加立即更新功能
+10.添加最后更新时间
+11. 重定向 页面 测试
+
+https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js
+https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css
+
+13:24:06
+
+{% include 'tianwang/_list.html' %}
+{% if pagination %}
+<div class="pagination">
+    {{ macros.pagination_widget(pagination, '.list') }}
+</div>
+{% endif %}
+这里分两个部分 {% include 'tianwang/_list.html' %}
+{{ macros.pagination_widget(pagination, '.list') }} 下面是页脚的代码
