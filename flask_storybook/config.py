@@ -7,15 +7,17 @@ class Config:
 
 
 
-    MAIL_SERVER = os.environ.get('MAIL_SERVER', 'smtp.qq.com')
-    MAIL_PORT = int(os.environ.get('MAIL_PORT', '465'))
-    MAIL_USE_SSL = os.environ.get('MAIL_USE_SSL', 'true').lower() in \
-        ['true', 'on', '1']
-    MAIL_USERNAME = 'zengaorong@qq.com'
-    MAIL_PASSWORD = 'xmghqcdjsckpebci'
-    FLASKY_MAIL_SUBJECT_PREFIX = '[Flasky]'
-    FLASKY_MAIL_SENDER = 'zengaorong@qq.com'
-    FLASKY_ADMIN = '1904959670@qq.com'
+    # MAIL_SERVER = os.environ.get('MAIL_SERVER', 'smtp.qq.com')
+    # MAIL_PORT = int(os.environ.get('MAIL_PORT', '465'))
+    # MAIL_USE_SSL = os.environ.get('MAIL_USE_SSL', 'true').lower() in \
+    #     ['true', 'on', '1']
+    # MAIL_USERNAME = 'zengaorong@qq.com'
+    # MAIL_PASSWORD = 'xmghqcdjsckpebci'
+    # FLASKY_MAIL_SUBJECT_PREFIX = '[Flasky]'
+    # FLASKY_MAIL_SENDER = 'zengaorong@qq.com'
+    # FLASKY_ADMIN = '1904959670@qq.com'
+
+
     UPLOADED_PHOTOS_DEST = os.getcwd() + '/app/static/upload'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     FLASKY_POSTS_PER_PAGE = 16

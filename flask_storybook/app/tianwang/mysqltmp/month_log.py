@@ -1,5 +1,5 @@
 #coding=utf-8
-from readexcel import readexcel_todict
+from flask_mode.app.tianwang.mysqltmp.readexcel import readexcel_todict
 import sys
 import MySQLdb
 import uuid
@@ -7,8 +7,6 @@ import subprocess
 import xlwt
 from datetime import  datetime,timedelta
 
-reload(sys)
-sys.setdefaultencoding('utf-8')
 dataname = "leodb"
 host='127.0.0.1'
 
@@ -39,7 +37,7 @@ def select_mouth_log_todb(time):
         endtime = datetime.strptime(str(year) + '-' + str(int(mouth) + 1),"%Y-%m")
 
     cur = conn.cursor()
-    print begintime,endtime
+    print(begintime,endtime)
 #     sql_select = '''
 #     SELECT wtdel.id AS "wtdel_id", wtdel.watcher_id AS wtdel_watcher_id, wtdel.creat_time AS wtdel_creat_time, wtdel.updata_time AS wtdel_updata_time, wtdel.work_for AS wtdel_work_for, wtdel.erro_type AS wtdel_erro_type, wtdel.log_type AS wtdel_log_type, wtdel.del_type AS wtdel_del_type, watcher.watchername AS watcher_watchername, watcher.id AS watcher_id, watcher.watcherserverip AS watcher_watcherserverip, watcher.watcherip AS watcher_watcherip, watcher.watchertown AS watcher_watchertown
 # FROM wtdel LEFT OUTER JOIN watcher ON watcher.id = wtdel.watcher_id
@@ -89,7 +87,7 @@ WHERE wtdel.updata_time >= "%s" AND wtdel.updata_time < "%s" ORDER BY wtdel.upda
     num = 0
 
     for cell in out_list:
-        print cell[4]
+        print(cell[4])
         now_time = cell[4].strftime("%Y-%m-%d")
         if td_time!=now_time:
             if td_time == None:
@@ -135,4 +133,4 @@ WHERE wtdel.updata_time >= "%s" AND wtdel.updata_time < "%s" ORDER BY wtdel.upda
     #     print names
     # conn.commit()
     # conn.close()
-select_mouth_log_todb("2019-9")
+select_mouth_log_todb("2019-10")
