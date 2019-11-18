@@ -3,8 +3,8 @@ import threading
 import configparser
 import time
 import datetime
-from telecom_tianwang.app.tianwang.mysqltmp.readexcel import readexcel_todict
-from telecom_tianwang.app.tianwang.mysqltmp.opereat import updata_watch_todb,select_wterror,delete_wterror_todb,delete_check
+from flask_mode.app.tianwang.mysqltmp.readexcel import readexcel_todict
+from flask_mode.app.tianwang.mysqltmp.opereat import updata_watch_todb,select_wterror,delete_wterror_todb,delete_check
 
 import subprocess
 
