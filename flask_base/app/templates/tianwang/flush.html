@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="{{url_for('static', filename='jquery-3.2.1/jquery-3.2.1.js')}}"></script>
+    <script>
+            // 发送ajax请求，获取配置信息
+            var flush_data = function () {
+                $.ajax({
+                    method: "get",
+                    url: '/tianwang' + '/reflush',
+                    async: true,
+                    dataType: "json",
+                    success: function (data) {
+                        console.log(data)
+                        window.location.href = "../tianwang/list"  ;
+                    },
+                })
+            }
+
+    </script>
+</head>
+<body>
+    <div class="picBox" onClick="flush_data()" id="switchPoint">刷新</div>
+</body>
+</html>
